@@ -1,0 +1,35 @@
+* {
+    text-align: center;
+}
+#mainTopic {
+    color: blue;
+}
+h1,h3,h5 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div button {
+    background-color: purple;
+    color: azure;
+}
+button:hover {
+    background-color: yellow;
+    color: blue;
+}
+p:nth-of-type(1) {
+    color: yellow;
+}
+p:nth-of-type(3) {
+    color: yellow;
+}
+h1::first-letter {
+    color: red;
+}
+input[type="checkbox"]:checked + label {
+    color: darkgreen;
+    font-weight: bold;
+}
+.myPara {
+    color: white;
+    background-color: cornflowerblue;
+}

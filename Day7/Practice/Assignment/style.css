@@ -1,0 +1,24 @@
+/* div {
+    height: 150px;
+    width: 300px;
+    background-color: gray;
+    border: 5px solid dotted;
+    margin-top: 20px;
+    margin-right: 1rem;
+    margin-bottom: 40px;
+    margin-left: 2rem;
+    padding: 1rem;
+} this is for Qs1 */
+
+/* div {
+    height: 100px;
+    width: 100px;
+    background-color: pink;
+    border: 2px solid black;
+    border-radius: 50%; 
+    display:inline-block;
+} this is for the QS2. */
+
+ul li {
+display: inline;
+}

@@ -1,0 +1,42 @@
+/* this is all part for box related  
+  div {
+    margin-top: 2rem ;
+    height: 500px;
+    width: 500px;
+    background-color: antiquewhite;
+    border: 1px solid gray;
+    border-left-color: yellow;
+    border-left-style: dashed;
+    border-radius: 5%;
+    justify-items: center;
+    padding:12px;
+   display: inline-block;        this is part for the display element in html using css  
+    margin: 10px 20px 30px ;
+}
+div:hover {
+    background-color: pink;
+}
+button {
+    height: 70px;
+    width: 80%;
+    border-radius: 10px;
+    display:block;
+    justify-content: center;
+    align-content: center;
+    margin-left: 40px;
+}*/
+
+.outer {
+    height: 400px;
+    width: 400px;
+    background-color: pink;
+    display: block;
+    justify-items: center;
+    align-content: center;
+}
+.inner {
+    height: 50px;
+    width: 50px;
+    /* margin: 50%; */
+    background-color: red;
+}

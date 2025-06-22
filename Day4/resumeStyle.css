@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Container for the whole resume */
+.resume-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Left sidebar */
+.left-column {
+    width: 35%;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.left-column h1 {
+    color: #fca311;
+    font-size: 24px;
+}
+
+.left-column img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #fca311;
+    margin-bottom: 20px;
+}
+
+.left-column h2 {
+    color: #ffd166;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+/* Right main section */
+.right-column {
+    width: 65%;
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+.right-column h2 {
+    color: #fca311;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.right-column p, .right-column li {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #2c3e50;
+    color: white;
+}
