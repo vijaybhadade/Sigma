@@ -1,7 +1,8 @@
-const menuIcon = document.querySelector('.humber');
-const navLinks = document.querySelector('.nav-link');
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinks = document.querySelector(".nav-link");
 
-menuIcon.addEventListener('click', () => {
-  navLinks.style.display =
-    navLinks.style.display === 'flex' ? 'none' : 'flex';
+  menuIcon.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
 });
