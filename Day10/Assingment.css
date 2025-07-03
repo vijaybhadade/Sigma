@@ -1,0 +1,127 @@
+/* 
+ this is my code to try to implement.
+.cantainer {
+    height: 600px;
+    width: 600px;
+    background-color: black;
+    display: grid;
+    gap: 10px;
+    grid-template-columns:50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px ;
+    grid-template-rows:50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+}
+.items {
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    background-color: yellow;
+}
+.one {
+    grid-column: 1/span 11;
+}
+.two {
+    grid-row: 1/3;
+    grid-column: 1/10;
+}
+.three {
+   grid-column: 1/6;
+}
+.four {
+    grid-row: 1/10;
+    grid-column: 1/3;
+}
+.five {
+    grid-row: 1/8;
+    grid-column: 1/6;
+}
+.six {
+  grid-column: 1 / span 12;
+  grid-row: 12;
+} */
+
+/* this is chatgpt code to try solve the problem  */
+/* .container {
+    height: 600px;
+    width: 600px;
+    background-color: black;
+    display: grid;
+    gap: 10px; 
+    grid-template-columns: repeat(12, 1fr); 
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.items {
+    border: 2px solid black;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.one {
+    grid-column: 1 / span 12;
+}
+
+.two {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 8;
+
+.three {
+    grid-column: 4 / span 9;
+    grid-row: 2;
+}
+
+.four {
+    grid-column: 12;
+    grid-row: 3 / span 6;
+}
+
+.five {
+    grid-column: 4 / span 8;
+    grid-row: 3 / span 6;
+}
+
+.six {
+    grid-column: 1 / span 12;
+    grid-row: 12;
+} */
+
+/* this real solve the problem  */
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12,1fr);
+    grid-gap: 10px;
+}
+
+.container div {
+    background-color: pink;
+    font-size: 1.5rem;
+}
+.header {
+    grid-column: 1/span 12;
+}
+.sidebar {
+    grid-column: 1/ span 3;
+    grid-row: 2/span 10;
+}
+.navigate {
+   
+    grid-column: 4/span 6;
+}
+.ads {
+    grid-column: 10/span 3;
+    grid-row: 2/span 10;
+    
+}
+.main {
+    grid-column: 4/span 6;
+    grid-row: 3/span 9;
+}
+.footer {
+    grid-column: 1/ span 12;
+}
