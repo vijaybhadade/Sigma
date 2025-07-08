@@ -1,0 +1,37 @@
+p {
+    color: #A52A2A;
+    line-height: 30px;
+    border:1px solid #ccc;
+    border-left: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px gray;
+}
+p::first-letter{
+    font-weight: bold;
+    color: darkred;
+}
+h1,h3,p {
+    text-align: center;
+}
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.6rem;
+}
+a {
+    color: rgb(0,128,0);
+    text-decoration: none;
+}
+a:hover {
+  color: darkgreen;
+  text-decoration: underline;
+}
+textarea {
+    color: #000000;
+}
+h1 {
+    text-decoration: underline black;
+}
+button {
+    background-color: white;
+    color: blueviolet;
+}

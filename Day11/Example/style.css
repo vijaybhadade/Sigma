@@ -1,0 +1,326 @@
+/* ✅ Global reset for consistent sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Base Page Styling */
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* ---------------------- */
+/* NAVIGATION BAR STYLES */
+/* ---------------------- */
+.navbar {
+  height: 80px;
+  width: 100%;
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 9px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-link {
+  display: flex;
+  gap: 20px; /* ✅ Fixed: Added missing unit */
+}
+
+.nav-link a {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 100px;
+}
+
+section h1 {
+  font-size: 26px;
+}
+section h2 {
+  font-size: 26px;
+  font-weight: bold;
+}
+/* ✅ Optional: Add hover effect */
+.nav-link a:hover {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+/* ✅ Menu icon hidden by default (desktop) */
+.humber {
+  display: none;
+}
+
+/* ✅ Show hamburger only on small screens */
+@media (max-width: 768px) {
+  .nav-link {
+    display: none; /* ✅ Hide menu on small screen */
+  }
+
+  .humber {
+    display: block;
+    font-size: 30px; /* ✅ Moved from duplicate */
+    
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .navbar {
+    padding: 5px 10px;
+  }
+
+  .main-first,
+  .Quick {
+    width: 100%; /* ✅ Ensure mobile stacking */
+  }
+}
+
+.humber img {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+/* ---------------------- */
+/* HERO SECTION */
+/* ---------------------- */
+.hero {
+  height: 200px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  margin: 0;
+}
+
+.hero-content p {
+  margin: 10px 0;
+}
+
+.hero-content button {
+  margin-top: 10px;
+  background-color: blue;
+  color: white;
+  height: 30px;
+  width: 150px;
+  border-radius: 7px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+/* ---------------------- */
+/* MAIN SECTION STYLES */
+/* ---------------------- */
+.section-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px 30px;
+  gap: 20px;
+  flex-wrap: wrap; /* ✅ responsive row */
+}
+
+.main-first {
+  width: 48%;
+  border: 2px solid blue; /* ✅ border added */
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  text-align: center;
+}
+.main-first h2 {
+  color: blue;
+}
+
+.main-first h1 {
+  margin-left: 0;
+}
+
+/* FIRST ROW - 2 BLOCKS SIDE BY SIDE */
+.service-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* COMMON BLOCK STYLING */
+.web,
+.frontend,
+.performance,
+.Quick-link,
+.info,
+.Bird {
+  height: 120px;
+  width: 460px;
+  border-radius: 9px;
+  background-color: lightblue;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+/* THIRD BLOCK BELOW */
+.performance {
+  margin-top: 20px;
+}
+
+/* ---------------------- */
+/* QUICK SECTION STYLES */
+/* ---------------------- */
+.Quick {
+  width: 48%;
+  border: 2px solid blue; /* ✅ border added */
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;}
+
+.Quick-link h2 {
+  
+  color: blue;
+}
+.Quick-link {
+  border: 1px solid white;
+}
+
+.info h2  {
+  margin-top: 20px;
+  color: blue;
+}
+.info   {
+  margin-top: 20px;
+}
+
+.Bird {
+  margin-top: 20px;
+}
+.Bird  h2 {
+  color: blue;
+}
+
+/* ---------------------- */
+/* FOOTER STYLES */
+/* ---------------------- */
+footer {
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 10px;
+}
+
+/* ---------------------- */
+/* PORTRAIT HERO STYLES */
+/* ---------------------- */
+@media (orientation: portrait) {
+  .hero {
+    background: linear-gradient(to bottom, #ffe0e0, #ffc0cd);
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-row h2,
+  .section-row p {
+    font-size: 16px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+    color: blue;
+  }
+  .hero-content h2 {
+    color: blue;
+  }
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-content button {
+    width: 120px;
+    font-size: 14px;
+  }
+
+  .main-first,
+  .Quick {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+    footer h3  {
+    font-size: 14px;
+    color: white;
+  }
+}
+
+ /* this is to show the menu data  */
+@media screen and (max-width: 768px) {
+  .nav-link {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    width: 100%;
+    background-color: blueviolet;
+    font-weight: 200;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .nav-link.show {
+    display: flex;
+    color: black;
+  }
+
+  .humber {
+    display: block;
+    cursor: pointer;
+  }
+ .nav-link a {
+  color: black;
+  font-weight: 200;
+ }
+
+}
+

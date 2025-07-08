@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML LEVEL 3</title>
+    </head>
+
+    <body>
+        <!-- this is Q1> create table  -->
+        <!-- <table border="1" cellspacing="0" cellpadding="10">
+    <caption>Student Information:</caption>
+      <tr><th rowspan="7"> info</th>
+        <th rowspan="2">Name</th>
+        <th colspan="2">Address</th>
+      </tr>
+      <tr>
+        <th>City</th>
+        <th>House</th>
+      </tr>
+    
+    
+      <tr>
+        
+        <td>A</td>
+        <td>Delhi</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>Mumbai</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td>Kolkata</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>Pune</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>Janwal</td>
+        <td>5</td>
+      </tr>
+    
+  </table>  -->
+
+        <!-- Q2. Recreate the form:  -->
+        <form action="/Details" method="post" target="_blank" autocomplete="on" >
+            <!-- Fieldset -->
+            <fieldset>
+                <!-- Legend  -->
+                <legend> Details Form</legend>
+                <!-- Name  -->
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" autocomplete="name" pattern="[A-Za-z\s]" required>
+                </div>
+                <!-- Gender  -->
+                <div>Sex:
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">male</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">female</label>
+                </div>
+                <!-- Country  -->
+                <div>Country:
+                    <select name="Country" id="Country" required>
+                        <option value> Select an option:</option>
+                        <option value="in">india</option>
+                        <option value="usa">U.S.A</option>
+                        <option value="JPN">Japan</option>
+                    </select>
+                </div>
+                <!-- Message  -->
+                <div>
+                    <label for="feedback"> message</label> <br>
+                    <textarea name="feedback" id="feedback"  required></textarea>
+                </div>
+                <!-- subscribe  -->
+                <div>
+                    <input type="checkbox" id="subscribe" name="subscribe" required>
+                    <label for="subscribe">Subscribe ?</label>
+                </div>
+                <div>
+                    <button type="submit"> submit</button>
+                    <button type="reset">Clear </button>
+                </div>
+            </fieldset>
+
+        </form>
+
+        <hr>
+        <hr>
+
+        <form action="/feedback" method="post" target="_blank" autocomplete="on">
+
+            <!-- Fieldset -->
+            <fieldset>
+                <legend>Feedback form </legend>
+
+                <!-- this is form for the only feedback  -->
+                <h1>Feedback Form:</h1>
+                <!-- username  -->
+                <div>
+                    <label for="username">Name:
+                        <input type="text" id="username"
+                            placeholder="Write your name" name="name" required autocomplete="username">
+                    </label>
+                </div>
+                <!-- email  -->
+                <div>
+                    <label for="email">Email:
+                        <input type="email" id="email"
+                            placeholder="Write your email" name="email" autocomplete="email">
+                    </label>
+                </div>
+                <!-- message  -->
+                <div>
+                    <label for="message">Message:</label> <br>
+                    <textarea name="message" id="message" required></textarea>
+
+                </div>
+                <!-- Rate  -->
+                <div>
+                    Rate us out of 5: <br>
+                    <input type="radio" name="rate" id="rate1" value="1">
+                    <label for="rate1">1</label><br>
+                    <input type="radio" name="rate" id="rate2" value="2">
+                    <label for="rate2">2</label><br>
+                    <input type="radio" name="rate" id="rate3" value="3">
+                    <label for="rate3">3</label><br>
+                    <input type="radio" name="rate" id="rate4" value="4">
+                    <label for="rate4">4</label><br>
+                    <input type="radio" name="rate" id="rate5" value="5">
+                    <label for="rate5">5</label><br>
+                </div>
+                <!-- button  -->
+                <div>
+                    <button type="submit">Send your message!</button>
+                    <button type="reset">Clear</button>
+                </div>
+
+            </fieldset>
+
+        </form>
+    </body>
+
+</html>

@@ -1,0 +1,29 @@
+.container {
+ height: 600px;
+width: 100%;
+margin: 10px auto;
+border: 2px solid black;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+/* flex-wrap: wrap;
+align-items: baseline; */
+align-content: flex-start;
+}
+
+.container div {
+    height: 100px;
+    width: 300px;
+    color: white;
+    display: flex;
+}
+h1 {
+   margin: 10px ;
+   text-align:  center;
+}
+#org {
+    font-size: 10px;
+    /* flex-basis: 50px; */
+    /* flex-grow: 2; */
+    flex:2 2 100px
+}
