@@ -7,14 +7,9 @@ while(true)
     {
         console.log("quitting todo app");
     }
-    for(task of todo)
+    if(todo=="add")
     {
-        
-        console.log("--------------"); console.log("--------------");
-        if(task=="add")
-        {
-            prompt("please enter your today taks to add ")
-            task.push(todo);
-        }
+        prompt("enter your taks");
+        console.log(todo);
     }
 }
