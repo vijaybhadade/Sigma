@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.box-line1, .box-line2 {
+  display: flex;
+}
+.yellow, .green, .lightBlue, .aquaColor {
+  margin: 1rem;
+  border: 5px solid black;
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.yellow {
+  background-color: brown;
+}
+.green {
+  background-color: rgb(121, 121, 174);
+}
+.lightBlue {
+  background-color: chocolate;
+}
+.aquaColor {
+  background-color: lightskyblue;
+}
+.flash {
+  background-color: white;
+}
+.userFlash {
+  background-color: green;
+}
