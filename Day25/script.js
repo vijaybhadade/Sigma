@@ -116,3 +116,31 @@ function oracleDB(data)
     })
     
 }
+
+
+
+
+
+// this is part for thr try and catch in this oracleDB is promise object 
+
+oracleDB("vijay").then(()=> {
+    console.log("promise was solved...");
+     return oracleDB("hello vijay");// this is part execute after sedunally 
+})
+.then(()=> {
+        console.log("data 2 was saved...");
+        return oracleDB("data3");
+    })
+    .then(()=> {
+        console.log("data3 was saved....");
+         return oracleDB("data4");
+    })
+    .then(()=> {
+        console.log("data 4 was saved...");
+    })
+.catch(()=> {
+    console.log(" some promises was rejected...");
+})
+
+// this is part for the promise chaning 
+
