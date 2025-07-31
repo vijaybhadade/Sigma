@@ -77,7 +77,7 @@ console.log("this is part for the fetch with async function ");
     console.log(data6.fact);
 
     let res7=await fetch(url);
-    let data7= await res.json();
+    let data7= await res7.json();
     console.log(data7.fact);
    }
    catch (error){

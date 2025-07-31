@@ -100,4 +100,4 @@ console.log("this is part for the updating query string");
         li.innerText = col.name;
         list.appendChild(li);
       }
-    }
+    }-
