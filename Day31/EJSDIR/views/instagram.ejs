@@ -1,20 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
-</head>
-<body>
-    <h3>This page belongs to <%= username %></h3>
-    <button>Follower <%= data.followers %>+</button>
-    <button>Following <%= data.following %>+</button>
+<%- include("includes/head.ejs")%>
 
-    <h3>They are following you:</h3>
-    <ul>
-        <% data.followerList.forEach(name => { %>
-            <li><%= name %></li>
-        <% }) %>
-    </ul>
+<body>
+   <h2>This is page belong to <%= data.name %> </h2>
+   <button> Followers</button>
+   <button> Following</button>
+
+   <p> Follower:<%= data.Followers%> &nbsp; &nbsp; 
+    Following: <%= data.Following %> 
+</p>
+
+<hr/>
+
+<% for (post of data.posts) { %>
+ <img src="<%= post.image %>" alt="some image">
+  <p> Likes:<%= post.Likes%> &nbsp; &nbsp; 
+    Comments: <%= post.Comments %> 
+</p>
+
+<% } %>
+
+<%- include("includes/footer.ejs")%>
 </body>
+<script src="/app.js"></script>
 </html>
