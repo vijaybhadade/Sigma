@@ -3,12 +3,13 @@ const app=express();
 const path=require("path");
 const mongoose=require("mongoose");
 const Chat=require("./models/Chat.js");
+const methodOverride=require("method-override");
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"public")));
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
-
+app.use(methodOverride("_method"));
 
 main()
 .then((res)=> {
@@ -37,11 +38,6 @@ app.get("/chats",async(req,res)=>
     res.render("index.ejs",{ chats });
 });
 
-//new route
-app.get("/chats/new",(req,res)=>{
-    res.render("new.ejs");
-});
-
 //Create route
 app.post("/chats",(req,res)=>{
     let { from, to , msg}=req.body;
@@ -59,7 +55,33 @@ newChat.save()
                res.redirect("/chats");
 });
 
+//new route
+app.get("/chats/new",(req,res)=>{
+    res.render("new.ejs");
+});
 
+
+//edit  route
+app.get("/chats/:id/edit",async(req,res)=>{
+    let { id }=req.params;
+    let chat=await Chat.findById(id);
+     res.render("edit.ejs",{ chat });
+});
+
+//update route
+app.put("/chats/:id",async(req,res)=>{
+    let { id}=req.params;
+    let  { msg:newMsg}=req.body;
+    let chat=await Chat.findByIdAndUpdate(id,{ msg:newMsg },{runValidators:true,new:true});
+    res.redirect("/chats"); 
+});
+
+//destroy route
+app.delete("/chats/:id",async(req,res)=>{
+    let {id}=req.params;
+    let chat=await Chat.findByIdAndDelete(id);
+    res.redirect("/chats");
+});
 
 app.get("/",(req,res)=> {
     res.send("connect to root");
