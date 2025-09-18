@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create new listings</title>
+</head>
+<body>
+   <form action="/listings" method="post"> 
+  <h2>Create a listing</h2>
+
+  <label for="title">
+    Title: <input type="text" name="listing[title]" placeholder="Enter title of listing">
+  </label>
+  <br><br>
+
+  <label for="description">
+    Description: <textarea name="listing[description]" placeholder="Enter description" rows="12" cols="12"></textarea>
+  </label>
+  <br><br>
+
+  <label for="image">
+    Image: <input type="text" name="listing[image]" placeholder="Enter image URL">
+  </label>
+  <br><br>
+
+  <label for="price">
+    Price: <input type="number" name="listing[price]" placeholder="Enter price">
+  </label>
+  <br><br>
+
+  <label for="location">
+    Location: <input type="text" name="listing[location]" placeholder="Enter location">
+  </label>
+  <br><br>
+
+  <label for="country">
+    Country: <input type="text" name="listing[country]" placeholder="Enter country">
+  </label>
+  <br><br>
+
+  <button type="submit">Add listing</button>
+</form>
+
+</body>
+</html>
+
