@@ -1,20 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Listings</title>
-</head>
+<% layout('layout/Boilerplate') %>
+
 <body>
-    <h2> All listings are  showing here!</h2>
-    <form action="/listings/new" method="GET"><button> create listings </button> </form>
-    <ol>
-       <%  for(let listings of allListings){ %>
-            <li> <a href="/listings/<%= listings._id %>"> <%= listings.title %> </a> </li>
-            
-        <br> <br>
-      <%  } %>
-        
-    </ol>
+  <h2>All listings are showing here!</h2>
+
+  <% for(let listings of allListings){ %>
+    <div class="card" style="width: 18rem;">
+      <img src="<%= listings.image.url %>" class="card-img-top" alt="listing_image">
+      <div class="card-body">
+        <p class="card-text"><%= listings.title %></p> <br>
+        <p>₹ <%= listings.price ? listings.price.toLocaleString("en-IN") : "N/A" %></p>
+      </div>
+    </div>
+    <br>
+  <% } %>
+
+  <ol>
+    <% for(let listings of allListings){ %>
+      <li> 
+        <a href="/listings/<%= listings._id %>"><%= listings.title %></a>
+      </li>
+    <% } %>
+  </ol>
 </body>
-</html>
