@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname,"/public/")));
 app.use('/assets',express.static(path.join(__dirname,'assets')));
 
 app.get("/", (req, res) => {
-  res.send("Hi, I am root");
+  res.redirect("/listings");
 });
 
 //Index Route
