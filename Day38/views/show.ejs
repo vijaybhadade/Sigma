@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Details</title>
+</head>
+<body>
+    <h2>Here are the Chat Details 💬</h2>
+
+    <div class="chat">
+        <p><b>Chat ID:</b> <%= chat._id %></p>
+        <p><b>From:</b> <%= chat.from %></p>
+        <p><b>To:</b> <%= chat.to %></p>
+        <p><b>Message:</b> <%= chat.msg %></p>
+        <p><b>Sent At:</b> <%= chat.created_at.toString().split("GMT")[0] %></p>
+    </div>
+
+    <br>
+    <a href="/chats">Back to All Chats</a>
+    <a href="/chats/<%= chat._id %>/edit">Edit this Chat</a>
+</body>
+</html>
