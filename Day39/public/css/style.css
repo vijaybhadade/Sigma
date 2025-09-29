@@ -1,141 +1,120 @@
+/* Global */
 body {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   padding-right: 2rem;
   padding-left: 2rem;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-}
-/* .container{
-  display: flex;
-  flex: 1;
-} */
-
-/* Example of using different weights */
-
-.light-text {
-  font-weight: 300 !important; /* Light */
-}
-
-.regular-text {
-  font-weight: 400 !important; /* Regular */
-}
-
-.medium-text {
-  font-weight: 500 !important; /* Medium */
-}
-
-.semibold-text {
-  font-weight: 600 !important; /* SemiBold */
+  min-height: 100vh;  /* Ensure full height */
+  margin: 0;
 }
 
 /* navbar */
 .navbar {
   height: 5rem;
   background-color: white;
- }
- .nav-link {
-    color: #222222 !important;
- }
+}
+.nav-link {
+  color: #222222 !important;
+}
 
- /* footer  */
-  /* .border-upper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }  */
-  .icon {
- height: 20px;
- width: 20px;
-  }
-.f-info-link a {
-    text-decoration: none;
-    color: #222222;
-  }
-.f-info-link,.f-info-social , .f-info-brand {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Footer always stays at bottom */
+footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Footer content box */
+.f-info {
+  text-align: center;
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;  /* stack items vertically */
+  justify-content: center; /* center vertically */
+  align-items: center;     /* center horizontally */
+  height: 8rem;
+}
+
+/* Social icons */
+.icon {
+  height: 20px;
+  width: 20px;
 }
 
 .f-info-social img {
-    cursor: pointer;
-    margin-right: 1rem;
-    height: 1.3rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  height: 1.3rem;
 }
-  .f-info-link a:hover {
-    color: blue;
-    text-decoration: underline;
-  }
-  .f-info {
-    text-align: center;
-    background-color: #ebebeb;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: space-evenly;
-    height: 8rem;
-    
-  }
 
-  /* cards  */
-  .card{
-    border: none !important;
-    margin-bottom: 1rem !important;
-    margin-right: 1rem !important;
-  }
-  .card-img-top {
-    border-radius: 2rem !important;
-    object-fit: cover !important;
-  }
-  .card-body {
-    padding: 0 !important;
+/* Links */
+.f-info-link a {
+  text-decoration: none;
+  color: #222222;
+  margin: 0 0.5rem;
+}
 
-  }
-  .card-text{
-    font-weight: 400 !important;
-  }
-  .listings-link {
-    text-decoration: none;
-  }
-  .card-img-overlay{
-    opacity: 0 !important;
-  }
-  .card-img-overlay:hover{
-    opacity: 0.2 !important;
-    background-color: white;
-  }
+.f-info-link a:hover {
+  color: blue;
+  text-decoration: underline;
+}
 
-  /* new page  */
-  .add-btn {
-    background-color: #fe424d !important;
-    border: none !important;
-  }
-  /* edit page  */
-  .sub-dark {
-    background-color:  #fe424d !important;
-    border: none;
-    border-radius: 1rem;
-    font-weight: 800;
-  }
+/* cards */
+.card {
+  border: none !important;
+  margin-bottom: 1rem !important;
+  margin-right: 1rem !important;
+}
+.card-img-top {
+  border-radius: 2rem !important;
+  object-fit: cover !important;
+}
+.card-body {
+  padding: 0 !important;
+}
+.card-text {
+  font-weight: 400 !important;
+}
+.listings-link {
+  text-decoration: none;
+}
+.card-img-overlay {
+  opacity: 0 !important;
+}
+.card-img-overlay:hover {
+  opacity: 0.2 !important;
+  background-color: white;
+}
 
-  /* show page  */
+/* new page */
+.add-btn {
+  background-color: #fe424d !important;
+  border: none !important;
+}
 
-  .show-img{
-    height: 50vh;
-   
-  }
-  .show-a {
-    text-decoration: none;
-  }
-  .show-a:hover{
-    text-decoration:underline;
-  }
-  .btn-show,.show-edit {
-     background-color:  #fe424d !important;
-    border: none;
-    border-radius: 1rem;
-    font-weight: 800;
-    color: white;
-  }
+/* edit page */
+.sub-dark {
+  background-color: #fe424d !important;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 800;
+}
+
+/* show page */
+.show-img {
+  height: 50vh;
+}
+.show-a {
+  text-decoration: none;
+}
+.show-a:hover {
+  text-decoration: underline;
+}
+.btn-show,
+.show-edit {
+  background-color: #fe424d !important;
+  border: none;
+  border-radius: 1rem;
+  font-weight: 800;
+  color: white;
+}
