@@ -9,13 +9,48 @@ body {
   margin: 0;
 }
 
-/* navbar */
+/* Navbar layout */
 .navbar {
+  display: flex;
+  align-items: center;
   height: 5rem;
   background-color: white;
+  border-bottom: 2px solid #ddd; /* bottom border */
+  width: 100%; /* full width */
+  padding: 0;  /* remove left/right padding */
+  box-sizing: border-box;
+  margin-left: 0;
 }
+
+/* Left side: logo + links */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* space between logo and links */
+  padding-left: 1rem; /* optional small spacing from the absolute edge */
+}
+
+/* Logo */
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* space between each link */
+}
+
 .nav-link {
   color: #222222 !important;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #fe424d !important;
+  border-bottom: 2px solid #fe424d; /* hover underline */
 }
 
 /* Footer always stays at bottom */
@@ -60,7 +95,7 @@ footer {
 }
 
 /* cards */
-.card {
+.listing-card {
   border: none !important;
   margin-bottom: 1rem !important;
   margin-right: 1rem !important;
@@ -117,4 +152,17 @@ footer {
   border-radius: 1rem;
   font-weight: 800;
   color: white;
+}
+
+/* comment  */
+.commentArea{
+  margin-left: 14rem !important;
+}
+hr {
+font-size: 14px !important;
+}
+
+/* comment  */
+.commentReview{
+  border: 1px solid black !important;
 }

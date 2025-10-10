@@ -34,3 +34,4 @@ const initDB = async () => {
 initDB().then(() => {
   mongoose.connection.close(); // Close the connection after the script is done
 });
+

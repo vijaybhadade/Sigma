@@ -12,3 +12,11 @@ const listingSchema = joi.object({
 });
 
 module.exports = listingSchema;
+
+//module for review exports
+module.exports=reviewSchema=joi.object({
+    review:joi.object({
+        rating:joi.number().min(1).max(5).required(),
+        comment:joi.string().required(),
+    })
+}).required()
