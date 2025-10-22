@@ -9,7 +9,7 @@ const wrapAsync=require("./util/wrapAsync.js");
 const ExpressError=require("./util/ExpressError.js");
 const  listingSchema = require('./schema');
 const reviewSchema=require("./schema");
-const Review=require("./modules/reviews.js");
+const Review = require("./modules/reviews.js");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
