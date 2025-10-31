@@ -10,6 +10,8 @@ const ExpressError=require("./util/ExpressError.js");
 const  listingSchema = require('./schema');
 const reviewSchema=require("./schema");
 const Review = require("./modules/reviews.js");
+const session=require("express-session");
+const flash=require("connect-flash");
 
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -25,6 +27,17 @@ async function main() {
   await mongoose.connect(MONGO_URL);
 }
 
+const sessionOption={
+  secret:"mysupercode",
+  resave:false,
+  saveUninitialized:true,
+  cookie: {
+    expires: Date.now()+3*24*60*60*1000,
+    maxAge:3*24*60*60*1000,
+    httpOnly: true
+  }
+};
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "view"));
 app.use(express.urlencoded({ extended: true }));
@@ -33,6 +46,10 @@ app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public/"))); 
 app.use('/assets',express.static(path.join(__dirname,'assets')));
 app.use(express.json());
+app.use(session(sessionOption));
+app.use(flash());
+
+
 app.get("/", wrapAsync((req, res) => {
   res.redirect("/listings");
 }));
