@@ -8,8 +8,12 @@ const wrapAsync=require("./util/wrapAsync.js");
 const ExpressError=require("./util/ExpressError.js");
 const session=require("express-session");
 const flash=require("connect-flash");
-
-const listing=require("./router/listing.js");
+const User=require("./modules/user.js");
+// const Login=require("./modules/login.js");
+const passport=require("passport");
+const LocalPassport= require("passport-local");
+const userRouter=require("./router/user.js");
+const listingRouter=require("./router/listing.js");
 const reviewRouter=require("./router/review.js");
 const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
 
@@ -49,6 +53,15 @@ app.use(express.json());
 app.use(session(sessionOption));
 app.use(flash());
 
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalPassport(User.authenticate())); 
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
 app.get("/", wrapAsync((req, res) => {
   res.redirect("/listings");
 }));
@@ -62,10 +75,20 @@ next();
 
 
 //Router for listings
-app.use("/listings",listing);
+app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
+app.use("/",userRouter);
 
 
+//create demo user
+// app.get("/demouser", async(req,res)=>{
+//   let fakeUser= new User({
+//     email:"user23@gmail.com",
+//     username: "user23434"
+//   });
+//  let newUser= await User.register(fakeUser,"user@3234234");
+//  res.send(newUser);
+// });
 
 app.use((req, res, next) => {
   next(new ExpressError(404, "Page Not Found"));
