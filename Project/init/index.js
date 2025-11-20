@@ -23,7 +23,7 @@ const initDB = async () => {
   // 2. Add an owner property to each listing (replace with your actual owner ID if needed)
   initData.data = initData.data.map((obj) => ({
     ...obj,
-    owner: '66e1e8122320b9e8427f4d4a' // A placeholder owner ID
+    owner: '6905ba55040e2210b9155509' // A placeholder owner ID
   }));
   
   // 3. Insert the fresh, correctly structured data

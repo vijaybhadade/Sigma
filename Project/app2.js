@@ -1,3 +1,9 @@
+if(process.env.NODE_EVN != "production")
+{
+require("dotenv").config();
+}
+
+
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -9,7 +15,6 @@ const ExpressError=require("./util/ExpressError.js");
 const session=require("express-session");
 const flash=require("connect-flash");
 const User=require("./modules/user.js");
-// const Login=require("./modules/login.js");
 const passport=require("passport");
 const LocalPassport= require("passport-local");
 const userRouter=require("./router/user.js");
@@ -70,6 +75,8 @@ app.get("/", wrapAsync((req, res) => {
 app.use((req,res,next)=>{
 res.locals.success=req.flash("success");
 res.locals.error=req.flash("error");
+res.locals.currUser=req.user;
+
 next();
 });
 
