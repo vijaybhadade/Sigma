@@ -1,22 +1,70 @@
 import { useState } from "react";
-import {v4 as uuid} from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 export default function Todo() {
-  const [task, setTask] = useState(["Get up"]);   // list of tasks
-  const [newTask, setNewTask] = useState("");     // current input text
+  const [task, setTask] = useState([
+    { id: uuid(), text: "Get up" }
+  ]);
 
-  // update input box
+  const [newTask, setNewTask] = useState("");
+
   function update(event) {
     setNewTask(event.target.value);
   }
 
-  // add new task
-  function addNewTask() {
-    if (newTask.trim() === "") return;            // ignore empty input
 
-    setTask(prev => [...prev, newTask]);          // add to array
-    setNewTask("");                               // clear input
+  //add task into todo list 
+  function addNewTask() {
+    if (newTask.trim() === "") return;
+
+    const newTodo = {
+      id: uuid(),
+      text: newTask
+    };
+
+    setTask(prev => [...prev, newTodo]);
+    setNewTask("");
   }
+
+  //delete task 
+  function deleteTask(id) {
+    setTask((prev) => prev.filter((t) => t.id !== id));
+
+  }
+ 
+  //update all array 
+  let upperCaseAll = (id) => {
+    setTask((preVal) => (preVal.map((todo) => {
+      return {
+        ...todo,
+        text: todo.text.toUpperCase()
+      };
+    })))
+  };
+  //convert all into lowercase 
+  let lowerCaseAll = (id) => {
+    setTask((preVal) => (preVal.map((todo) => {
+      return {
+        ...todo,
+        text: todo.text.toLowerCase()
+      };
+    })))
+  };
+
+  //upperCase one element into array
+  let upperCaseOne = (id) => {
+    setTask((prev) =>
+      prev.map((todo) => {  
+        if (todo.id == id) {
+          return { ...todo, text: todo.text.toUpperCase() };
+        }
+        return todo; // return unchanged todo
+      })
+    );
+  };
+
+
+  let styles = { height: 30, width: 170, borderRadius: 20 };
 
   return (
     <div>
@@ -25,6 +73,7 @@ export default function Todo() {
         placeholder="add task"
         value={newTask}
         onChange={update}
+        style={styles}
       />
       <br />
 
@@ -33,11 +82,18 @@ export default function Todo() {
       <hr />
       <h3>Task:</h3>
 
-      <ul>
-        {task.map((t, index) => (
-          <li key={index}>{t}</li>
+      <ol>
+        {task.map((todo) => (
+          <li key={todo.id}>
+            <span>{todo.text} </span>  &nbsp; &nbsp;
+            <button onClick={() => deleteTask(todo.id)}>Delete</button> &nbsp; &nbsp; &nbsp;
+            <button onClick={()=>upperCaseOne(todo.id)}>UpperCase</button>
+          </li>
         ))}
-      </ul>
+      </ol>
+      <br /> <br />
+      <button onClick={upperCaseAll}>UpperCase</button> &nbsp; &nbsp;&nbsp;
+      <button onClick={lowerCaseAll}>LowerCase</button>
     </div>
   );
 }
